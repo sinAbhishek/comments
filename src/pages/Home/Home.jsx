@@ -63,7 +63,7 @@ const Home = () => {
               onClick={(e) => {
                 navigate(`/post/${post.id}`);
               }}
-              className="border-[1px] border-slate-800"
+              className="border-[1px] border-slate-800 hover:cursor-pointer"
             >
               <Posts posts={post} />
             </div>
