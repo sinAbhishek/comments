@@ -1,8 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import { doc, setDoc, updateDoc } from "firebase/firestore";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { auth } from "../firebase";
 import { db } from "../firebase";
@@ -39,8 +37,6 @@ const ReplyModal = ({ openReply, handleCloseReply, activepost }) => {
   };
   return (
     <div>
-      {" "}
-      {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
         open={openReply}
         onClose={handleCloseReply}

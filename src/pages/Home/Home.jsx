@@ -6,13 +6,12 @@ import PostModal from "../../components/PostModal";
 import { db } from "../../firebase";
 import Posts from "../../components/Posts";
 import { Link, useNavigate } from "react-router-dom";
-import ReplyModal from "../../components/ReplyModal";
+
 const Home = () => {
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
   const handleOpen = () => setOpen(true);
 
-  const [activepost, setactivepost] = useState("");
   const handleClose = () => setOpen(false);
 
   const [data, setdata] = useState([]);
@@ -20,14 +19,10 @@ const Home = () => {
   React.useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
         setuser(user);
         // ...
       } else {
-        // User is signed out
-        // ...
         navigate("/login");
       }
     });
@@ -38,7 +33,6 @@ const Home = () => {
       const array = [];
       querySnapshot.forEach((doc) => {
         console.log(doc.data());
-        // doc.data().forEach((c) => array.push(c));
 
         array.push(doc.data());
         console.log(doc.data()[0]);
@@ -47,10 +41,7 @@ const Home = () => {
       setdata(array);
     });
   }, []);
-  //   const handleSelect = (post) => {
-  //     // setactivepost(post);
-  //     handleOpenReply();
-  //   };
+
   useEffect(() => {
     data[0] && console.log(data);
   }, [data]);

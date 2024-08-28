@@ -2,7 +2,6 @@ import Posts from "./Posts";
 import { useParams } from "react-router-dom";
 import { doc, onSnapshot, query, collection } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
-import { FaArrowLeft } from "react-icons/fa6";
 import { db } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import Comment from "./Comment";
@@ -16,7 +15,6 @@ const SinglePost = () => {
       const array = [];
       querySnapshot.forEach((doc) => {
         console.log(doc.data());
-        // doc.data().forEach((c) => array.push(c));
 
         array.push(doc.data());
         console.log(doc.data()[0]);

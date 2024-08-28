@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import { getAuth } from "firebase/auth";
-import { getuserdetails } from "./getuserdetails";
 import ReplyModal from "./ReplyModal";
 import { FaRegComment } from "react-icons/fa";
 const Posts = ({ posts }) => {
-  //   const userdetails = getuserdetails(posts.userid);
-  //   console.log(userdetails);
   const handleCloseReply = () => setOpenReply(false);
   const [openReply, setOpenReply] = useState(false);
   const handleOpenReply = () => setOpenReply(true);
