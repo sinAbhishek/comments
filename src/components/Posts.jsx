@@ -7,17 +7,17 @@ const Posts = ({ posts }) => {
   const handleOpenReply = () => setOpenReply(true);
   return (
     <div className=" px-4 pt-1 pb-4 relative  ">
-      <div className=" w-full">
-        <div className=" flex items-center h-full">
+      <div className=" w-full ">
+        <div className=" flex items-center h-full gap-2">
           <img
-            className=" w-10 h-10 rounded-full"
+            className=" w-10 h-10 rounded-full border border-slate-500"
             src={posts.photourl}
             alt=""
           />
           <p className=" text-white">{posts.username}</p>
         </div>
       </div>
-      <p className=" text-slate-400 pl-[40px]">{posts.Content}</p>
+      <p className=" text-slate-200 pl-[40px]">{posts.Content}</p>
       <p>{posts.userid}</p>
 
       <ReplyModal
@@ -26,10 +26,7 @@ const Posts = ({ posts }) => {
         activepost={posts}
       />
       <div className=" absolute bottom-2 left-[55px] mt-2 flex items-center gap-1">
-        <button
-          className=" text-slate-200 z-30"
-          onClick={() => handleOpenReply()}
-        >
+        <button className=" text-slate-200 " onClick={() => handleOpenReply()}>
           <FaRegComment size={"1.1rem"} />
         </button>
         <p className=" text-slate-50">{posts.Replies?.length}</p>

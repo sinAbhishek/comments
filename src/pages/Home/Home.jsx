@@ -50,13 +50,13 @@ const Home = () => {
       <div className="">
         <button
           onClick={() => handleOpen()}
-          className="absolute top-[55px] left-2 bg-sky-500 text-white font-semibold w-max px-[20px] py-2 rounded-full flex items-center justify-center"
+          className="absolute max-[768px]:bottom-4 z-30  min-[768px]:top-[55px] left-2 bg-sky-500 text-white font-semibold w-max px-[20px] py-2 rounded-full flex items-center justify-center"
         >
           Create post
         </button>
       </div>
       <PostModal open={open} handleClose={handleClose} />
-      <div className=" w-[55%] ">
+      <div className=" w-[55%] max-[768px]:w-[70%] ">
         {data &&
           data.map((post) => (
             <div
