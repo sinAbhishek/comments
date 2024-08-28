@@ -33,7 +33,7 @@ const Sidebar = () => {
       });
   };
   return (
-    <div className="w-screen h-[50px] fixed bg-slate-900 z-20 flex gap-4 items-center px-3 ">
+    <div className="w-screen h-[50px] fixed bg-cyan-900 z-20 flex gap-4 items-center px-3 ">
       {user && (
         <div className=" flex items-center h-full w-max">
           <img

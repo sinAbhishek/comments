@@ -37,14 +37,17 @@ const PostModal = ({ handleClose, open }) => {
   }, []);
   const createPost = async () => {
     const id = uuidv4();
-    await setDoc(doc(db, "Posts", id), {
-      Content: data,
-      photourl: user.photoURL,
-      Replies: [],
-      userid: user.uid,
-      username: user.displayName,
-      id: id,
-    });
+    data.length > 0 &&
+      (await setDoc(doc(db, "Posts", id), {
+        Content: data,
+        photourl: user.photoURL,
+        Replies: [],
+        userid: user.uid,
+        username: user.displayName,
+        id: id,
+      }));
+    setdata("");
+    handleClose();
   };
   return (
     <div>

@@ -12,7 +12,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 600,
-  bgcolor: "white",
+  bgcolor: "black",
   border: "1px solid #949494",
   boxShadow: 24,
   borderRadius: "20px",
@@ -26,14 +26,16 @@ const ReplyModal = ({ openReply, handleCloseReply, activepost }) => {
       {
         username: auth.currentUser.displayName,
         photoUrl: auth.currentUser.photoURL,
-        comment:
-          "Dot notation allows you to update a single nested field without overwriting other nested fields. If you update a nested field without dot notation, you will overwrite the entire map field, as shown in the following example:",
+        comment: data,
       },
     ];
     const frankDocRef = doc(db, "Posts", activepost.id);
-    await updateDoc(frankDocRef, {
-      Replies: [...updatedReply],
-    });
+    data.length > 0 &&
+      (await updateDoc(frankDocRef, {
+        Replies: [...updatedReply],
+      }));
+    setdata("");
+    handleCloseReply();
   };
   return (
     <div>

@@ -28,7 +28,7 @@ const SinglePost = () => {
     });
   }, []);
   return (
-    <div className=" bg-black pt-[55px] w-screen flex justify-center h-max overflow-y-auto  ">
+    <div className=" bg-black pt-[55px] w-screen flex justify-center min-h-screen h-max overflow-y-auto  ">
       <div className=" w-[55%] flex flex-col items-center border-x border-x-slate-500 ">
         <div className=" w-full">{data && <Posts posts={data} />}</div>
         <hr className=" text-slate-600 w-full" />
