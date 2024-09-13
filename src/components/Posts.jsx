@@ -20,7 +20,7 @@ const Posts = ({ posts }) => {
       <p className=" text-slate-200 pl-[40px]">{posts.Content}</p>
       <p>{posts.userid}</p>
 
-      <ReplyModal
+      <ReplyModal //reply
         openReply={openReply}
         handleCloseReply={handleCloseReply}
         activepost={posts}
